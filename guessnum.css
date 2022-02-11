@@ -1,0 +1,222 @@
+body {
+	margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	  sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+	  monospace;
+  }
+  
+  /* world-class */
+  .wrapper{
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  justify-items: center;
+	  align-content: center;
+	  height: 100vh;
+	  width: 100vw;
+  }
+  
+  /* title */
+  .title{
+	  position: fixed;
+	  padding: 25px;
+	  top: 0;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  font-size: 3em;
+	  text-transform: uppercase;
+	  font-family: 'Roboto', sans-serif;
+	  font-weight: 50px;
+	  color: #fff;
+	  background-color: rgb(44, 40, 40);
+	  display: inline-block;
+	  width: 100vw;
+	  text-align: center;
+	  pointer-events: none;
+  }
+  
+  /* answer sheet */
+  .answer{
+	  transform: translateY(-50%);
+	  height: 200px;
+	  width: 400px;
+	  justify-content: center;
+	  align-items: center;
+	  display: flex;
+	  flex-direction: column;
+	  overflow: hidden;
+  }
+  
+  .answer .write-answer{
+	  position: absolute;
+	  top: 20px;
+	  margin-bottom: 25px;
+	  height: 30px;
+	  font-size: 25px;
+	  width: 400px;
+	  outline: none;
+	  border: none;
+	  padding-left: 5px;
+  }
+  
+  .answer .label{
+	  position: absolute;
+	  left: 0;
+	  top: 26px;
+	  pointer-events: none;
+	  padding-bottom: 3px;
+	  padding-left: 4px;
+	  font-size: 20px;
+	  width: calc(400px - 4px);
+	  text-align: start;
+	  border-bottom: 2px solid rgba(0,0,0,.75);
+  }
+  
+  .answer .label::after{
+	  content: '';
+	  position: absolute;
+	  z-index: 2;
+	  bottom: 0;
+	  left: 0px;
+	  height: 100%;
+	  width: 100%;
+	  border-bottom: 2px solid rgb(43, 131, 202);
+	  transform: translate(100%,2px);
+  }
+  
+  .answer .label .content{
+	  text-transform: uppercase;
+	  font-family: 'Roboto', sans-serif;
+	  color: rgba(0,0,0,.6);
+  }
+  
+  .answer .write-answer:focus + .label::after,
+  .answer .write-answer:valid + .label::after
+  {
+	  transform: translate(0%, 2px);
+	  transition: .25s ease;
+  }
+  
+  .answer .write-answer:focus + .label .content,
+  .answer .write-answer:valid + .label .content
+  {
+	  position: absolute;
+	  font-size: 12px;
+	  transform: translateY(-25px);
+	  color: rgb(43, 131, 202);
+	  transition: .25s ease;
+  }
+  
+  .answer .write-answer:focus + .label,
+  .answer .write-answer:valid + .label
+  {
+	  padding-bottom: 30px;
+  }
+  
+  /* clue */
+  .clue{
+	top: 17%;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  width: 400px;
+	  height: 70px;
+	  position: absolute;
+	  font-size: 25px;
+	  font-size: 30px;
+	  border-radius: 20px;
+  }
+  
+  .clue span{
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%,-50%);
+	  width: max-content;
+  }
+  
+  /* answer button */
+  .answer .btn {
+	  margin-top: 50px;
+  }
+  
+  .answer .btn .check{
+	  background-color: rgba(30, 34, 95, 0.9);
+	  outline: none;
+	  border: none;
+	  cursor: pointer;
+	  border-radius: 5px;
+	  color: #fff;
+	  padding: 10px;
+	  font-size: 1.4em;
+	  transition: .5s ease-in;
+	  margin: 0 40px 0 0;
+  }
+  
+  .answer .btn .check:hover{
+	  background-color: rgba(69, 75, 150, 0.9);
+  }
+  
+  .answer .btn .reset{
+	  font-size: 1.4em;
+	  background: none;
+	  border: 1px solid #000;
+	  cursor: pointer;
+	  outline: none;
+	  margin: 0 0 0 50px;
+	  padding: 10px;
+	  transition: .3s ease;
+	  border-radius: 5px;
+  }
+  
+  .answer .btn .reset:hover{
+	  box-shadow: 0px 0px 7px rgba(0, 0, 0, .75);
+  }
+  
+  .btn .adjust-number{
+	  width: 100px;
+	  font-size: 1.4em;
+	  outline: none;
+	  padding-left: 3px;
+  }
+  
+  /* history */
+  .history{
+	  position: absolute;
+	  border: 1px solid rgb(172, 166, 166);
+	  border-bottom: none;
+	  height: 50%;
+	  width: 50%;
+	  top: 49.9%;
+	  border-top-left-radius: 20px;
+	  border-top-right-radius: 20px;
+	  overflow: hidden;
+	  overflow-y: scroll;
+  }
+  
+  .guessHistory{
+	  position: relative;
+	  font-size: 24px;
+	  border-bottom: 1px solid rgb(172, 166, 166);
+	  height: 60px;
+	  width: 100%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  font-family: 'Montserrat', sans-serif;
+  }
+  
+  ul{
+	  padding: 0;
+	  margin: 0;
+  }
+  

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>Guess the number</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="guessnum.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://kit.fontawesome.com/2581aa715f.js"></script>
+	<script src="guessnum.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="title">Guess my number</div>
+		<div class="clue" id="bgrColor"><span id="clue"></span></div>
+		<div class="position answer" id="play-game">
+			<input type="number" autocomplete="off" class="write-answer" id="answer" required>
+			<label for="name" class="label"><span class="content">What's your guess</span></label>
+			<div class="btn">
+				<input type="button" value="Check me" class="check" id="check">
+				<input type="button" value="Reset" class="reset" id="reset">
+				<!-- <input type="number" autocomplete="off" class="adjust-number" id="numRange" value="100" required> -->
+			</div>
+		</div>
+		<div class="history" id="guessedNum"></div> 
+	</div>
+</body>
+</html>
